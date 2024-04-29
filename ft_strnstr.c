@@ -6,7 +6,7 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 09:05:50 by jfleming          #+#    #+#             */
-/*   Updated: 2024/04/22 10:28:50 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/04/29 17:02:34 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ bytes ('\0') are not compared.
 char *ft_strnstr(const char *big, const char *little, size_t len)
 {
 	char	*ptr = NULL;
-	int	i;
+	size_t	i;
 	int	j;
 
 	i = 0;

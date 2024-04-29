@@ -6,7 +6,7 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:56:12 by jfleming          #+#    #+#             */
-/*   Updated: 2024/04/18 14:49:08 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/04/29 16:08:55 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,14 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 
     return dest;
 }
-/*
+
 int	main(void)
 {
 	char src[] = {'e','g','h','i'};
 	char dest[] = {'a','b','c','d'};
-
-	printf("%s\n", ft_memmove(dest, src, 4));
-	printf("%s\n", memmove(dest, src, 4));
+	ft_memmove(dest, src, 4);
+	memmove(dest, src, 4);
+	//printf("%s\n", ft_memmove(dest, src, 4));
+	//printf("%s\n", memmove(dest, src, 4));
 	return(0);
-}*/
+}

@@ -6,7 +6,7 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:57:04 by jfleming          #+#    #+#             */
-/*   Updated: 2024/04/26 09:26:57 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:52:31 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,35 +19,41 @@ USING CARACTER "C" AS A DELIMITER
 */
 #include <stdlib.h>
 #include <stdio.h>
-char **ft_split(char const *s, char c)
+
+
+static int	cont_words(const char *s, char c)
 {
 	int	i;
-	int	j;
-	int	k;
 	int	nstrs;
-	int	len;
-	char	*dest1;
-	char	**result;
 
 	i = 0;
+	nstrs = 0;
+		while(s[i])
+		{
+			if(s[i] != c)
+			{
+				nstrs++;
+				while(s[i] && s[i] != c)
+					i++;
+			}
+			else
+				i++;
+	}
+	return (nstrs);
+}
+
+char **ft_split(char const *s, char c)
+{
+	auto int i, j, k, nstrs, len;
+	auto char *dest1, **result;
 	j = 0;
 	k = 0;
-	nstrs = 0;
+	nstrs = cont_words(s, c);
 	dest1 = NULL;
-	//result = NULL;
-	//dest1 = NULL;
+
 	//PRIMEIRO CONTAR O NUMERO DE STRINGS
-	while(s[i])
-	{
-		if(s[i] != c)
-		{
-			nstrs++;
-			while(s[i] && s[i] != c)
-				i++;
-		}
-		else
-			i++;
-	}
+
+	printf("%d\n", nstrs);
 	// alocar memoria para o array de strings
 	result = (char **)malloc((nstrs + 1) * sizeof(char *));
 	if(!result)
@@ -87,7 +93,7 @@ char **ft_split(char const *s, char c)
 
 int	main(void)
 {
-	char	*s = "Bom dia mundo!";
+	char	*s = " Bom dia mundo! ";
 	char	c = ' ';
 	char	**finalstring;
 

@@ -6,32 +6,28 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:56:52 by jfleming          #+#    #+#             */
-/*   Updated: 2024/04/27 15:58:03 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/04/29 17:01:43 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
-char	*f(unsigned int index, char c)
+char	f(unsigned int index, char c)
 {
 	if (index % 2 == 0)
 	{
 // Convert character to uppercase
 		if (c >= 'a' && c <= 'z')
 		{
-			char *result = (char *)malloc(sizeof(char));
-			result = c - 'a' + 'A';//quando tinha *result = c dava erros
-			return(result);
+			//char *result = (char *)malloc(sizeof(char));
+			//result = c - 'a' + 'A';
+			return(c - 'a' + 'A');
 		}
 	}
-	if(index % 2 != 0)
-// If index is odd or character is not lowercase, return the
-//original character
-		{
-			char *result = (char *)malloc(sizeof(char));
-			result = c;
-			return(result);
-		}
+	// If index is odd or character is not lowercase, return the
+	else
+		return(c);
+	return(0);
 }
 
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char))

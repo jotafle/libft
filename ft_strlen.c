@@ -6,7 +6,7 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:56:49 by jfleming          #+#    #+#             */
-/*   Updated: 2024/04/27 16:55:10 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/04/29 16:24:27 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ int main(void)
 	str = "12345";
 	ft_strlen(str);
 	printf("%d\n", ft_strlen(str));
-	printf("%d\n", strlen(str));
+	printf("%ld\n", strlen(str));
 	return(0);
 }

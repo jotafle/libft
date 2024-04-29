@@ -6,7 +6,7 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:55:03 by jfleming          #+#    #+#             */
-/*   Updated: 2024/04/22 14:06:08 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/04/29 14:44:55 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int ft_atoi(const char *str)
 
 int	main(void)
 {
-	const char	str[] = "";
+	const char	str[] = "-1234";
 
 	printf("%d\n", ft_atoi(str));
 	printf("%d\n", atoi(str));

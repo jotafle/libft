@@ -6,7 +6,7 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:56:43 by jfleming          #+#    #+#             */
-/*   Updated: 2024/04/19 13:14:14 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/04/29 16:23:13 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	main(void)
 	char dst[] = {'a','b','c','d', '\0'};
 	int	total_len = 0;
 	ft_strlcat(src, dst, total_len);
-	printf("%d\n", ft_strlcat(src, dst, total_len));
+	printf("%ld\n", ft_strlcat(src, dst, total_len));
 	//printf("%d\n", strlcat(src, dst, 9));
 	return(0);
 }

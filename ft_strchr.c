@@ -6,7 +6,7 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:56:31 by jfleming          #+#    #+#             */
-/*   Updated: 2024/04/22 12:10:28 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/04/29 16:19:04 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char *ft_strchr(const char *s, int c)
 int	main(void)
 {
 	char	*s = "Good day";
-	int	c;
+	//int	c;
 
 	printf("%s\n", ft_strchr(s, 'd'));
 	return(0);

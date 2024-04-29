@@ -6,7 +6,7 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:56:34 by jfleming          #+#    #+#             */
-/*   Updated: 2024/04/22 16:16:42 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/04/29 16:20:03 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include <string.h>
 char *ft_strdup(const char *s)
 {
-	int	n;
 	int	len;
 	char	*res;
 
