@@ -6,21 +6,15 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:57:04 by jfleming          #+#    #+#             */
-/*   Updated: 2024/04/29 15:52:31 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/02 11:54:46 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-RETURNS AN ARRAY OF STRINGS
-OBTAINED BY SPLITING "S"
-USING CARACTER "C" AS A DELIMITER
-
-***MUST END WITH A NULL POINTER***
-*/
+RETURNS AN ARRAY OF STRINGS OBTAINED BY SPLITING "S" USING CARACTER
+"C" AS A DELIMITER     ***MUST END WITH A NULL POINTER***    */
 #include <stdlib.h>
 #include <stdio.h>
-
-
 static int	cont_words(const char *s, char c)
 {
 	int	i;
@@ -50,10 +44,7 @@ char **ft_split(char const *s, char c)
 	k = 0;
 	nstrs = cont_words(s, c);
 	dest1 = NULL;
-
 	//PRIMEIRO CONTAR O NUMERO DE STRINGS
-
-	printf("%d\n", nstrs);
 	// alocar memoria para o array de strings
 	result = (char **)malloc((nstrs + 1) * sizeof(char *));
 	if(!result)
@@ -68,7 +59,6 @@ char **ft_split(char const *s, char c)
 				len++;
 			dest1 = (char *)malloc((len + 1) * sizeof (char));
 			//copiar caracteres para a substring
-
 			if(!dest1)
 				return(NULL);
 			j = 0;
@@ -110,6 +100,6 @@ int	main(void)
 		free(finalstring);
 	}
 	else
-		printf("Erro na alocacao de memoria");
+		printf("Erro na alocacao de memoria.");
 	return(0);
 }

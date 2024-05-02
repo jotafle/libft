@@ -6,7 +6,7 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:57:10 by jfleming          #+#    #+#             */
-/*   Updated: 2024/04/29 17:46:29 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/02 12:38:43 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,16 @@
 #include <stdlib.h>
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	//const unsigned char *p1 = (const unsigned char *)s + start;
+	//const unsigned char *p1 = (const unsigned char *)start;
 	unsigned int	i;
 	unsigned int	j;
 	char	*dest;
 
 	i = 0;
-	j = 0;
 	dest = (char *) malloc((len + 1) * sizeof(char));
 	if(dest == NULL)
 		return(NULL);
-	while(s[i] != start && s[i])// Encontra a posição inicial da substring
+	while((i < start) && s[i])// Encontra a posição inicial da substring
 		i++; // encerra com i = 4 (onde o i encontrou o start)
 	j = 0;
 	while(s[i] && j < len)
@@ -38,7 +37,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 int	main(void)
 {
 	char s[] = "Bom dia";
-	unsigned int	start = 'm';
+	unsigned int	start = 4;
 	unsigned int	len = 3;
 
 	char	*substring = ft_substr(s, start, len);
