@@ -6,7 +6,7 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:56:12 by jfleming          #+#    #+#             */
-/*   Updated: 2024/04/29 16:08:55 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/03 11:29:32 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 
     // Se dest e src não se sobrepõem, copia de forma simples de
 	//trás para frente
-    if (d < s || d >= (s + n)) //a segunda parte faz sentido verifica se o ponteiro de destino esta n bytes para alem do sorce
+    if (d < s || d >= (s + n)) //a segunda parte faz sentido verifica 
+	//se o ponteiro de destino esta n bytes para alem do source
 		{
         while (n--)//pos-decremento, inicia n e vai decrementando
 		{

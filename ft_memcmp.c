@@ -6,7 +6,7 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:56:00 by jfleming          #+#    #+#             */
-/*   Updated: 2024/04/29 14:44:18 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/03 11:00:32 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,17 @@ Recebe tambem o numero de bytes a comparar
 
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const unsigned char *p1 = s1, *p2 = s2;
+	const unsigned char *p1 = s1;
+	const unsigned char *p2 = s2;
 	size_t	i;
+	
 	i = 0;
-	while(n-->0)
+	while(n > 0)
 	{
 		if(p1[i] != p2[i])
 			return(p1[i]-p2[i]);
 		i++;
+		n--;
 	}
 	return(0);
 }

@@ -6,34 +6,36 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:55:56 by jfleming          #+#    #+#             */
-/*   Updated: 2024/04/29 14:44:18 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:04:58 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdio.h>
+#include <string.h>
+
 void *ft_memchr(const void *str, int c, size_t n)
 {
-    const unsigned char *p;
+    const unsigned char *p = (unsigned char *)str;
     unsigned char uc = c;
 
-	p = (unsigned char *)str;
-    while (n-- > 0) {
-        if (*p == uc) {
-            return (void *)p;
-        }
-        p++;
+    while (n > 0)
+    {
+    if (*p == uc)
+        return (void *)p;
+    p++;
+    n--;
     }
     return NULL;
 }
-/*
+
 int main(void)
 {
 	char str[] = {'a','b','c','d','e','g','h','i'};
-	printf("%p\n", ft_memchr(str, 'e', 5));
-	//printf("%p\n", memchr(str, 'e', 5));
+	printf("%s\n", ft_memchr(str, 'e', 5));
+	printf("%s\n", memchr(str, 'e', 5));
 	return(0);
-}*/
+}
 
 /*
 EXEMPLO:

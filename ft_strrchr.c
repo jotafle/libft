@@ -6,7 +6,7 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:57:01 by jfleming          #+#    #+#             */
-/*   Updated: 2024/04/22 12:22:26 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/03 16:59:19 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 //specified as '\0', these functions return a pointer to the
 //terminator.
 #include<stdio.h>
+#include <string.h>
 int	ft_strlen(const char *s)
 {
 	int len;
@@ -33,11 +34,9 @@ char *ft_strrchr(const char *s, int c)
 {
 	char	*ptr;
 	int	i;
-	int	len;
 
 	ptr = NULL;
-	len = ft_strlen(s);
-	i = len - 1;
+	i = ft_strlen(s) - 1;
 	while(i >= 0)
 	{
 		if(s[i] == c)
@@ -54,6 +53,7 @@ int	main(void)
 {
 	const char	*s = "Good day";
 
-	printf("%s\n", ft_strrchr(s, 'd'));
+	printf("%s\n", ft_strrchr(s, 'o'));
+	printf("%s\n", strrchr(s, 'o'));
 	return(0);
 }

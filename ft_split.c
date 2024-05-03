@@ -6,7 +6,7 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:57:04 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/02 11:54:46 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/03 12:07:20 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char **ft_split(char const *s, char c)
 	j = 0;
 	k = 0;
 	nstrs = cont_words(s, c);
-	dest1 = NULL;
+	dest1 = NULL;// PRECISA DEST LINHA?
 	//PRIMEIRO CONTAR O NUMERO DE STRINGS
 	// alocar memoria para o array de strings
 	result = (char **)malloc((nstrs + 1) * sizeof(char *));
@@ -63,11 +63,7 @@ char **ft_split(char const *s, char c)
 				return(NULL);
 			j = 0;
 			while(j < len)
-			{
-				dest1[j] = s[i];
-				i++;
-				j++;
-			}
+				dest1[j++] = s[i++];
 			dest1[j] = '\0';
 			result[k] = dest1;
 			k++;

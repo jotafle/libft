@@ -6,7 +6,7 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:56:34 by jfleming          #+#    #+#             */
-/*   Updated: 2024/04/29 16:20:03 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/03 12:28:16 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,14 @@ char *ft_strdup(const char *s)
 	len = 0;
 	while (s[len])
 		len++;
-	res = (char *) malloc(len * sizeof(char));
+	res = (char *) malloc((len + 1) * sizeof(char));
 	len = 0;
 	while(s[len])
 	{
 		res[len] = s[len];
 		len++;
 	}
+	res[len] = '\0';
 	return(res);
 	free(res);
 }

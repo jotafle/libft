@@ -6,7 +6,7 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 09:05:50 by jfleming          #+#    #+#             */
-/*   Updated: 2024/04/29 17:02:34 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/03 15:14:49 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 /*
 DESCRIPTION
 The  strstr()  function  finds  the  first  occurrence  of  the
-substring needle in the string haystack.  The terminating null
-bytes ('\0') are not compared.
+substring "little" in the string "big", procurando ate ao maximo de len
+caracteres.  The terminating null bytes ('\0') are not compared.
 */
 
 char *ft_strnstr(const char *big, const char *little, size_t len)
@@ -37,7 +37,9 @@ char *ft_strnstr(const char *big, const char *little, size_t len)
 		}
 		else
 		{
-			j = 0; // Reset j to start from the beginning of the substring
+			j = 0; // Reset j to start from the beginning of the 
+					//substring porque esta tem 3 caracteres
+					// e i ainda e' < len
 			ptr = NULL; // Reset ptr as substring doesn't match anymore
         }
 		i++;

@@ -6,7 +6,7 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 13:08:56 by jfleming          #+#    #+#             */
-/*   Updated: 2024/04/19 13:50:07 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/03 10:15:58 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,15 @@ void	ft_bzero(void *s, size_t n)
 	i = 0;
 	while(i < n)
 	{
-		p[i] = 0; //Set each byte to zero;
+		p[i] = '0'; //Set each byte to zero;
 		i++;
 	}
-	//return(s);
 }
 
 int	main(void)
 {
 	char s[] = {'e','g','h','i','\0'};
-	ft_bzero(s, 5);
+	ft_bzero(s, 2);
 	printf("%s\n", s);
 	//printf("%s\n", bzero(s, 5));
 	return (0);

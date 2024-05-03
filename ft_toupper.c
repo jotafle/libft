@@ -6,7 +6,7 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:57:15 by jfleming          #+#    #+#             */
-/*   Updated: 2024/04/19 14:40:16 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/03 16:43:37 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(void)
 	char	c;
 	printf("Introduza um caracter: ");
 	scanf("%c", &c);
-	printf("Resultado: %d\n", ft_toupper(c));
-	printf("Resultado: %d\n", toupper(c));
+	printf("Resultado: %c\n", ft_toupper(c));
+	printf("Resultado: %c\n", toupper(c));
 	return(0);
 }

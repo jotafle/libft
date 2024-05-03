@@ -6,7 +6,7 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:57:07 by jfleming          #+#    #+#             */
-/*   Updated: 2024/04/29 14:44:18 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/03 16:20:57 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ char *ft_strtrim(const char *s, const char *set)
 	k = 0;
 
 	dest = (char*) malloc((ft_strlen(s) + 1) * sizeof (char));
-	while(s[i] == set[j])
-		i++;
 	while(s[i])
 	{
 		while(s[i] == set[j])
@@ -46,13 +44,7 @@ char *ft_strtrim(const char *s, const char *set)
 		i++;
 	//	j++;
 		k++;
-	}/*
-	i = ft_strlen(s) - 1;
-	while(s[i])
-	{
-		dest[k] = s[i];
-		i--;
-	}*/
+	}
 	dest[k] = '\0';
 	return(dest);
 }
@@ -66,7 +58,7 @@ int	main(void)
 	finalstring = ft_strtrim(s,set);
 	if(finalstring != NULL)
 	{
-		printf("%s\n", finalstring);
+		printf("%s", finalstring);
 		free(finalstring);
 	}
 	else
