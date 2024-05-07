@@ -6,27 +6,29 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:56:16 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/03 16:50:53 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/06 13:12:25 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <string.h>
-#include<stdio.h>
-void *ft_memset(void *str, int c, size_t n)
-{
-	size_t i;
-	unsigned char *p = (unsigned char *)str; // Casting to char*
+#include <stdio.h>
 
+void	*ft_memset(void *str, int c, size_t n)
+{
+	size_t			i;
+	unsigned char	*p;
+
+	p = (unsigned char *)str;
 	i = 0;
-	while(i < n)
+	while (i < n)
 	{
-		p[i] = (unsigned char)c;// Setting individual bytes
+		p[i] = (unsigned char)c;
 		i++;
 	}
-	return(str);
+	return (str);
 }
-
+/*
 int	main(void)
 {
 	char str[] = {'e','g','h','i','\0'};
@@ -36,4 +38,4 @@ int	main(void)
 	printf("%s\n", ft_memset(str, 'b', 2));
 	printf("%s\n", memset(str, 'a', 2));
 	return (0);
-}
+}*/

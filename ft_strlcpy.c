@@ -6,27 +6,31 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:56:46 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/03 14:25:23 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/06 12:24:57 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
-size_t ft_strlen(const char *str)
+
+size_t	ft_strlen(const char *str)
 {
-    size_t len = 0;
-    while (str[len])
-        len++;
-    return len;
+	size_t	len;
+
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
 }
+
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t srcsize;
-	size_t i;
+	size_t	srcsize;
+	size_t	i;
 
 	if (!dst || !src)
 		return (0);
-	srcsize = ft_strlen(src);//tamanho de src, dst size e' parametro
+	srcsize = ft_strlen(src);
 	i = 0;
 	if (dstsize != 0)
 	{
@@ -39,7 +43,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	return (srcsize);
 }
-
+/*
 int	main(void)
 {
 	const char	*src = "Hello, World";
@@ -51,3 +55,4 @@ int	main(void)
 	printf("%zu\n", strlcpy(dst, src, dstsize));
 	return (0);
 }
+*/

@@ -6,49 +6,42 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 09:05:50 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/03 15:14:49 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/06 12:42:52 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include<stdio.h>
-/*
-DESCRIPTION
-The  strstr()  function  finds  the  first  occurrence  of  the
-substring "little" in the string "big", procurando ate ao maximo de len
-caracteres.  The terminating null bytes ('\0') are not compared.
-*/
+#include <stdio.h>
 
-char *ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	char	*ptr = NULL;
+	char	*ptr;
 	size_t	i;
-	int	j;
+	int		j;
 
+	ptr = NULL;
 	i = 0;
 	j = 0;
-	while((i < len) && big[i] && little[j])
+	while ((i < len) && big[i] && little[j])
 	{
-		if(big[i] == little[j])
+		if (big[i] == little[j])
 		{
-			if(j == 0)
-				ptr = (char *)&big[i]; // Record the potential start of the substring
+			if (j == 0)
+				ptr = (char *)&big[i];
 			j++;
 		}
 		else
 		{
-			j = 0; // Reset j to start from the beginning of the 
-					//substring porque esta tem 3 caracteres
-					// e i ainda e' < len
-			ptr = NULL; // Reset ptr as substring doesn't match anymore
-        }
+			j = 0;
+			ptr = NULL;
+		}
 		i++;
 	}
-	if(little[j] == '\0') // If the whole substring is found
-		return(ptr);
-	return(NULL);// If the substring is not found within len
+	if (little[j] == '\0')
+		return (ptr);
+	return (NULL);
 }
-
+/*
 int main(void) {
     const char *big = "Foo Bar Baz";
     const char *little = "Bar";
@@ -68,4 +61,4 @@ int main(void) {
     }
 
     return 0;
-}
+}*/

@@ -6,49 +6,48 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:57:07 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/03 16:20:57 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/06 12:45:35 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stddef.h>
-#include<stddef.h>
-#include<stdio.h>
+#include <stddef.h>
+#include <stddef.h>
+#include <stdio.h>
 #include <stdlib.h>
-int ft_strlen(const char *s)
+
+int	ft_strlen(const char *s)
 {
 	int	len;
 
 	len = 0;
-	while(s[len])
+	while (s[len])
 		len++;
-	return(len);
+	return (len);
 }
 
-char *ft_strtrim(const char *s, const char *set)
+char	*ft_strtrim(const char *s, const char *set)
 {
-	int	i;
-	int	j;
-	int	k;
+	int		i;
+	int		j;
+	int		k;
 	char	*dest;
 
 	i = 0;
 	j = 0;
 	k = 0;
-
-	dest = (char*) malloc((ft_strlen(s) + 1) * sizeof (char));
-	while(s[i])
+	dest = (char *) malloc((ft_strlen(s) + 1) * sizeof (char));
+	while (s[i])
 	{
-		while(s[i] == set[j])
+		while (s[i] == set[j])
 			i++;
 		dest[k] = s[i];
 		i++;
-	//	j++;
 		k++;
 	}
 	dest[k] = '\0';
-	return(dest);
+	return (dest);
 }
-
+/*
 int	main(void)
 {
 	char	*s = "      Bom dia mundo!      ";
@@ -64,4 +63,4 @@ int	main(void)
 	else
 		printf("Erro na alocacao de memoria.\n");
 	return(0);
-}
+}*/

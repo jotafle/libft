@@ -5,97 +5,82 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 12:55:48 by jfleming          #+#    #+#             */
-/*   Updated: 2024/04/29 16:00:58 by jfleming         ###   ########.fr       */
+/*   Created: 2024/05/07 09:59:42 by jfleming          #+#    #+#             */
+/*   Updated: 2024/05/07 10:54:09 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-int	ft_int_len(int n)
-{	//Calcula o tamanho do INT
-	int	lenght;
+#include "libft.h"
+#include <stdio.h>
 
-	lenght = 0;
-	while(n != 0)
-	{
-		lenght++;
-		n /= 10;
-	}
-	return(lenght);
-}
+static int	num_len(long int n);
+static void	handle_zero(char **result, long int *nbr);
+
 char	*ft_itoa(int n)
 {
-	int	i;
-	int	sign;
-	char	*str;
-	int	len;
+	char	*result;
+	long	nbr;
+	int		len;
 
-	i = 0;
-	sign = 1;
-	if(n >= 2147483647 || n <= -2147483647)
-		return(NULL);
-	if(n < 0)
+	nbr = n;
+	len = num_len(n);
+	result = malloc(sizeof(char) * len + 1);
+	if (!result)
+		return (NULL);
+	handle_zero(&result, &nbr);
+	result[len] = 0;
+	if (nbr < 0)
 	{
-		sign *= -1;
-		n *= -1;
+		result[0] = '-';
+		nbr = -nbr;
 	}
-	// Allocate memory for the string
-	// If n is 0, the lenght of the string will be 1
-    len = (n == 0) ? 1 : ft_int_len(n);
-	str = (char *)malloc(sizeof(char) * (len + 1));
-
-	if (!str)
-		return NULL; // Memory allocation failed
-	str[0] = '\0'; //Inicializar a string
-	while(n != 0)
+	while (nbr)
 	{
-		str[i] = n % 10 + '0';
-		n = n / 10;
-		i++;
+		result[len - 1] = nbr % 10 + 48;
+		nbr = nbr / 10;
+		len--;
 	}
-	//Adding sign if necessary
-	if(sign == -1)
-		str[i++] = '-';
-	//i++;
-	str[i] = '\0';
-	//inverter a ordem da string
-	int	start;
-	int	end;
-
-	start = 0;
-	end = i - 1;
-
-	//*****FAZER CONDICAO PARA SE O N COMECAR POR ZERO(S)*****
-
-	while(start < end)
-	{
-		char temp = str[start];
-		str[start] = str[end];
-		str[end] = temp;
-		start++;
-		end--;
-	}
-	return(str);
+	return (result);
 }
 
+static void	handle_zero(char **result, long int *nbr)
+{
+	if (*nbr == 0)
+	{
+		**result = '0';
+		*nbr = -*nbr;
+	}
+}
+
+static int	num_len(long n)
+{
+	int	count;
+
+	count = 0;
+	if (n < 0)
+	{
+		count++;
+		n = -n;
+	}
+	if (n == 0)
+		count++;
+	while (n != 0)
+	{
+		n = n / 10;
+		count++;
+	}
+	return (count);
+}
+/*
 int	main(void)
 {
 	int	n;
 
-	n = -2147;
-	char *result = ft_itoa(n);
+	n = -1234;
+	char *res = ft_itoa(n);
 
-	printf("%s\n", result);
-	if(result)
-		free(result);
-	return(0);
-}
-/*
-File "<string>", line 86
-    n = 02147;
-        ^
-SyntaxError: leading zeros in decimal integer literals are not
-permitted; use an 0o prefix for octal integers
-*/
+	printf("%s\n", res);
+	if (res)
+		free(res);
+	return (0);
+}*/

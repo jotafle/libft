@@ -6,21 +6,21 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:56:37 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/03 14:38:02 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/06 12:13:32 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdio.h>
 
-void f(unsigned int index, char *c)
+void	f(unsigned int index, char *c)
 {
 	printf("Character at index %u: %c\n", index, *c);
 }
 
-void ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	if (s && f)
@@ -32,10 +32,11 @@ void ft_striteri(char *s, void (*f)(unsigned int, char *))
 		}
 	}
 }
-
+/*
 int	main(void)
 {
 	char s[] = "ola joao";
 	ft_striteri(s, &f);
 	return(0);
 }
+*/

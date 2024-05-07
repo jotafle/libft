@@ -6,19 +6,19 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:55:38 by jfleming          #+#    #+#             */
-/*   Updated: 2024/04/11 12:15:07 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/06 11:21:25 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include <stdio.h>
 
 int	ft_isdigit(int c)
 {
 	if ('0' <= c && c <= '9')
 		return (1);
-	return(0);
+	return (0);
 }
-
+/*
 int	main(void)
 {
 	char	c;
@@ -32,4 +32,4 @@ int	main(void)
 	else
 		printf("Isso nao e um digito!\n");
 	return(0);
-}
+}*/

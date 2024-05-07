@@ -6,7 +6,7 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:56:00 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/03 11:00:32 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/06 13:11:40 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,25 @@ Recebe tambem o numero de bytes a comparar
 #include <stdio.h>
 #include <string.h>
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const unsigned char *p1 = s1;
-	const unsigned char *p2 = s2;
-	size_t	i;
-	
+	const unsigned char	*p1;
+	const unsigned char	*p2;
+	size_t				i;
+
+	p1 = s1;
+	p2 = s2;
 	i = 0;
-	while(n > 0)
+	while (n > 0)
 	{
-		if(p1[i] != p2[i])
-			return(p1[i]-p2[i]);
+		if (p1[i] != p2[i])
+			return (p1[i] - p2[i]);
 		i++;
 		n--;
 	}
-	return(0);
+	return (0);
 }
-
+/*
 int main(void)
 {
 	char s1[] = {'a','b', 'e','g','h','i'};
@@ -42,4 +44,4 @@ int main(void)
 	printf("%d\n", ft_memcmp(s1, s2, 5));
 	printf("%d\n", memcmp(s1, s2, 5));
 	return(0);
-}
+}*/

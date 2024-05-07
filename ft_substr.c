@@ -6,34 +6,34 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:57:10 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/02 12:38:43 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/06 12:47:02 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stddef.h>
-#include<stddef.h>
-#include<stdio.h>
+#include <stddef.h>
+#include <stddef.h>
+#include <stdio.h>
 #include <stdlib.h>
-char *ft_substr(char const *s, unsigned int start, size_t len)
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	//const unsigned char *p1 = (const unsigned char *)start;
 	unsigned int	i;
 	unsigned int	j;
-	char	*dest;
+	char			*dest;
 
 	i = 0;
 	dest = (char *) malloc((len + 1) * sizeof(char));
-	if(dest == NULL)
-		return(NULL);
-	while((i < start) && s[i])// Encontra a posição inicial da substring
-		i++; // encerra com i = 4 (onde o i encontrou o start)
+	if (dest == NULL)
+		return (NULL);
+	while ((i < start) && s[i])
+		i++;
 	j = 0;
-	while(s[i] && j < len)
+	while (s[i] && j < len)
 		dest[j++] = s[i++];
 	dest[j] = '\0';
 	return (dest);
 }
-
+/*
 int	main(void)
 {
 	char s[] = "Bom dia";
@@ -51,7 +51,7 @@ int	main(void)
 	printf("Erro na alocação de memória.\n");
 	}
 	return(0);
-}
+}*/
 
 /*
 NO MAIN TIVE QUE CRIAR UM NOVO PONTEIRO *SUBSTRING

@@ -6,19 +6,19 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:55:43 by jfleming          #+#    #+#             */
-/*   Updated: 2024/04/11 12:23:28 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/06 11:21:38 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include <stdio.h>
 
 int	ft_isprint(int c)
 {
 	if ((0 <= c && c >= 31) || c >= 127)
-		return(0);
-	return(1);
+		return (0);
+	return (1);
 }
-
+/*
 int	main(void)
 {
 	char	c;
@@ -33,3 +33,4 @@ int	main(void)
 		printf("Valor nao printavel\n");
 	return(0);
 }
+*/

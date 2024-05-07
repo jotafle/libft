@@ -6,18 +6,19 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:55:32 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/03 09:32:42 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/06 11:20:50 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include <stdio.h>
+
 int	ft_isalpha(int c)
 {
-	if(('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z'))
-		return(1);
+	if (('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z'))
+		return (1);
 	return (0);
 }
-
+/*
 int	main(void)
 {
 	char	c;
@@ -30,4 +31,4 @@ int	main(void)
 	else
 		printf("Caracter nao alfabetico\n");
 	return(0);
-}
+}*/
