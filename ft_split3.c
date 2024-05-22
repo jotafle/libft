@@ -1,83 +1,80 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split3.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 12:57:04 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/22 10:02:48 by jfleming         ###   ########.fr       */
+/*   Created: 2024/05/07 10:14:29 by jfleming          #+#    #+#             */
+/*   Updated: 2024/05/22 10:01:20 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_substrings(const char *s, char c)
-{
-	int	i;
-	int	nstrs;
+static int		word_len(char const *str, char c);
+static char		**ft_free(char **strs, int count);
 
+char	**ft_split(char const *s, char c)
+{
+	auto char **result;
+	auto int i, j;
+	if (!s)
+		return (NULL);
+	result = ft_calloc((ft_count_words(s, c) + 1), sizeof(char *));
+	if (!result)
+		return (NULL);
 	i = 0;
-	nstrs = 0;
+	j = 0;
 	while (s[i])
 	{
 		if (s[i] != c)
 		{
-			nstrs++;
-			while (s[i] && s[i] != c)
-				i++;
+			result[j] = ft_substr(s, i, word_len(&s[i], c));
+			if (!result[j])
+				return (ft_free(result, j));
+			j++;
+			i += word_len(&s[i], c);
 		}
 		else
 			i++;
 	}
-	return (nstrs);
+	result[j] = 0;
+	return (result);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**ft_free(char **strs, int count)
 {
-	int		i;
-	int		len;
-	char	*dest1;
-	char	**result;
+	int	i;
 
-	result = (char **)malloc((count_substrings(s, c) + 1) * sizeof(char *));
-	if (!result)
-		return (NULL);
 	i = 0;
-	while (s[i])
+	while (i < count)
 	{
-		if (s[i] != c)
-		{
-			len = 0;
-			while (s[i + len] != c)
-				len++;
-			dest1 = (char *)malloc((len + 1) * sizeof (char));
-			if (!dest1)
-				return (NULL);
-		}
+		free(strs[i]);
+		i++;
 	}
-	return (0);
+	free(strs);
+	return (NULL);
 }
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+static int	word_len(char const *str, char c)
 {
-	size_t	c;
-	char	**result;
-	int		k;
+	int	len;
+	int	i;
 
-	k = 0;
-	c = 0;
-	if (size == 0)
-		return (ft_strlen(src));
-	while (src[c] && c < size - 1)
+	len = 0;
+	i = 0;
+	while (str[i])
 	{
-		dst[c] = src[c];
-		c++;
+		if (str[i] != c)
+		{
+			len++;
+		}
+		else if (str[i] == c)
+			break ;
+		i++;
 	}
-	dst[c] = 0;
-	return (ft_strlen(src));
-	result[k] = NULL;
-	return (**result);
+	return (len);
 }
 /*
 int	main(void)

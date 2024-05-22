@@ -6,24 +6,11 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:57:07 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/06 12:45:35 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/09 15:18:43 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-int	ft_strlen(const char *s)
-{
-	int	len;
-
-	len = 0;
-	while (s[len])
-		len++;
-	return (len);
-}
+#include "libft.h"
 
 char	*ft_strtrim(const char *s, const char *set)
 {
@@ -46,18 +33,19 @@ char	*ft_strtrim(const char *s, const char *set)
 	}
 	dest[k] = '\0';
 	return (dest);
+	free (dest);
 }
 /*
 int	main(void)
 {
 	char	*s = "      Bom dia mundo!      ";
-	char	*set = " ";
+	char	*set = "i";
 	char	*finalstring;
 
 	finalstring = ft_strtrim(s,set);
 	if(finalstring != NULL)
 	{
-		printf("%s", finalstring);
+		printf("%s", ft_strtrim(s,set));
 		free(finalstring);
 	}
 	else

@@ -6,12 +6,11 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:57:12 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/06 12:48:20 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/07 14:32:08 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

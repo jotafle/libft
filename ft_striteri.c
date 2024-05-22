@@ -6,12 +6,11 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:56:37 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/06 12:13:32 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/07 14:31:18 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	f(unsigned int index, char *c)
 {

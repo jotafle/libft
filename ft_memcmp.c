@@ -6,7 +6,7 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:56:00 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/06 13:11:40 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/07 14:30:23 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 Esta funcao recebe dois pointers para duas zonas da memoria a comparar
 Recebe tambem o numero de bytes a comparar
 */
-#include <stddef.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

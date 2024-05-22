@@ -6,14 +6,11 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:57:10 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/06 12:47:02 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/07 14:29:11 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

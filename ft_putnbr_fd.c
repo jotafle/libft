@@ -6,39 +6,29 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:56:25 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/06 11:51:27 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/09 14:27:44 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <unistd.h>
-
-void	ft_putchar_fd(char c, int fd)
-{
-	write (fd, &c, 1);
-}
+#include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if ((n < 2147483647) && (n > -2147483648))
+	long	nb;
+
+	nb = n;
+	if (nb < 0)
 	{
-		if (n == 0)
-			write(fd, "0", 1);
-		if (n == -2147483648)
-			write(fd, "-2147483648", 1);
-		if (n < 0)
-		{
-			ft_putchar_fd('-', fd);
-			n *= -1;
-		}
-		if (n >= 10)
-		{
-			ft_putnbr_fd(n / 10, fd);
-			ft_putnbr_fd(n % 10, fd);
-		}
-		else
-			ft_putchar_fd(n + '0', fd);
+		ft_putchar_fd('-', fd);
+		nb = nb * -1;
 	}
+	if (nb > 9)
+	{
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putnbr_fd(nb % 10, fd);
+	}
+	else
+		ft_putchar_fd(nb + 48, fd);
 }
 /*
 int	main(void)

@@ -6,13 +6,11 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:56:16 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/06 13:12:25 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/07 14:30:33 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memset(void *str, int c, size_t n)
 {

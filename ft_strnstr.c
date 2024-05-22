@@ -6,12 +6,11 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 09:05:50 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/06 12:42:52 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/07 14:31:51 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {

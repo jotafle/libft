@@ -6,12 +6,11 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:56:28 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/06 12:03:41 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/07 14:31:01 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

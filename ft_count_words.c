@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_count_words.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 12:56:19 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/07 14:30:40 by jfleming         ###   ########.fr       */
+/*   Created: 2024/05/07 14:37:55 by jfleming          #+#    #+#             */
+/*   Updated: 2024/05/07 14:37:57 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_count_words(char const *str, const char delim)
 {
-	write(fd, &c, 1);
-}
-/*
-int	main(void)
-{
-	int	fd;
-	char	*str = "a";
+	int	count;
+	int	x;
+	int	i;
 
-	fd = 1;
-	ft_putchar_fd(*str, fd);
-	write(fd, "\n", 1);
-	return(0);
+	count = 0;
+	x = 0;
+	i = 0;
+	while (str[i] == delim)
+		i++;
+	while (str[i])
+	{
+		if (str[i] != delim && x == 0)
+		{
+			count++;
+			x = 1;
+		}
+		else if (str[i] == delim)
+		{
+			x = 0;
+		}
+		i++;
+	}
+	return (count);
 }
-*/

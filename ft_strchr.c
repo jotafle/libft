@@ -6,29 +6,27 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:56:31 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/06 12:12:11 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/09 14:57:57 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
 	char	*ptr;
-	int		i;
 
-	ptr = NULL;
-	i = 0;
-	while (s[i])
+	while (*s)
 	{
-		if (s[i] == c)
+		if (*s == (char)c)
 		{
-			ptr = (char *)&s[i];
+			ptr = (char *)s;
 			return (ptr);
 		}
-		i++;
+		s++;
 	}
+	if ((char)c == *s)
+		return ((char *)s);
 	return (NULL);
 }
 /*
@@ -39,5 +37,4 @@ int	main(void)
 
 	printf("%s\n", ft_strchr(s, 'd'));
 	return(0);
-}
-*/
+}*/

@@ -6,7 +6,7 @@
 #    By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/29 15:10:12 by jfleming          #+#    #+#              #
-#    Updated: 2024/05/06 10:27:33 by jfleming         ###   ########.fr        #
+#    Updated: 2024/05/09 13:36:17 by jfleming         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRCS = ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
 	ft_putstr_fd.c ft_split.c ft_strchr.c ft_strdup.c ft_striteri.c \
 	ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c \
 	ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c \
-	ft_tolower.c ft_toupper.c
+	ft_tolower.c ft_toupper.c ft_isalnum.c ft_bzero.c ft_atoi.c ft_calloc.c \
+
 
 OBJS = $(SRCS:.c=.o)
 
@@ -26,32 +27,17 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-all: $(NAME)
-	ar rcs $@ $^// 'ar' create, modify, and extract files from archives
-					typically static libraries.
-				// 'r' specifies that 'ar' should insert the files
-					listed into the archive.
-				// 'c'  instructs 'ar' to create the archive if it
-				   doesn't already exist.
-				// 's' tells 'ar' to write an index (or symbol table)
-				   to the archive.
-				// So, ar rcs together means to create an archive,
-					add the specified files to it, and write an index
-					for faster access. In the context of the makefile
-					command.
+all: $(NAME) clean
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $^ -o $@
+	ar rcs $(NAME) $(OBJS)
 
 clean:
-	rm -f $(OBJS) // -f forca sem pedir confirmacao
+	rm -f $(OBJS)
 
-fclean:	clean // After removing the object files (clean), it proceeds
-			  // to remove the executable or library file specified
-			  // by $(NAME).
+fclean: clean
 	rm -f $(NAME)
 
-re:	fclean all // It ensures that the entire project is rebuilt
-			   // from scratch after cleaning up.
+re:	fclean all
 
 .PHONY : all clean fclean re

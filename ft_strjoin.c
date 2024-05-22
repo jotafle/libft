@@ -6,14 +6,11 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:56:40 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/06 12:18:34 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/09 15:09:54 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_strlen1(const char *s1)
 {
@@ -40,10 +37,14 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	char	*new;
 	int		i;
 	int		j;
+	int		total;
 
 	i = 0;
 	j = 0;
-	new = (char *) malloc((ft_strlen1(s1)) + (ft_strlen2(s2)) * sizeof(char));
+	total = ft_strlen1(s1) + ft_strlen2(s2);
+	new = (char *) malloc((total + 1) * sizeof(char));
+	if (new == 0)
+		return (NULL);
 	while (s1[i])
 	{
 		new[i] = s1[i];
@@ -57,6 +58,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	}
 	new[i] = '\0';
 	return (new);
+	free (new);
 }
 /*
 int	main(void)
@@ -74,5 +76,4 @@ int	main(void)
 	else
 		printf("Erro na alocação de memória.\n");
 	return(0);
-}
-*/
+}*/

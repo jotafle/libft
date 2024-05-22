@@ -6,13 +6,11 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:56:04 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/06 13:11:50 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/07 14:30:27 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stddef.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

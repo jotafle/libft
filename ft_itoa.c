@@ -6,12 +6,11 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 09:59:42 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/07 10:54:09 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/07 14:30:18 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	num_len(long int n);
 static void	handle_zero(char **result, long int *nbr);
