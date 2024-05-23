@@ -6,7 +6,7 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 09:05:50 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/07 14:31:51 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/23 14:28:33 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,13 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	ptr = NULL;
 	i = 0;
 	j = 0;
+	if (little[0] == '\0')
+		return ((char *)big);
 	while ((i < len) && big[i] && little[j])
 	{
 		if (big[i] == little[j])
 		{
-			if (j == 0)
+			if (j <= 0)
 				ptr = (char *)&big[i];
 			j++;
 		}
@@ -40,24 +42,14 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		return (ptr);
 	return (NULL);
 }
-/*
-int main(void) {
-    const char *big = "Foo Bar Baz";
-    const char *little = "Bar";
-    char *ptr;
 
-    ptr = ft_strnstr(big, little, 15);
-    if (ptr != NULL) {
-        // Print the found substring
-        while (*ptr && *ptr != ' ')
-		{
-            putchar(*ptr);
-            ptr++;
-        }
-        putchar('\n');
-    } else {
-        printf("Substring not found\n");
-    }
+//  int main(void)
+// {
+//     const char *big = "lorem ipsum dolor sit amet";
+//     const char *little = "";
+//     char *ptr;
 
-    return 0;
-}*/
+//     ptr = ft_strnstr(big, little, 1);
+// 	printf("%s\n", ptr);
+//     return 0;
+// }
