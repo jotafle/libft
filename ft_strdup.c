@@ -6,7 +6,7 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:56:34 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/09 15:03:12 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/27 09:47:56 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ char	*ft_strdup(const char *s)
 	}
 	res[len] = '\0';
 	return (res);
-	free (res);
 }
 /*
 int	main(void)

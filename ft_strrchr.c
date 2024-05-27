@@ -6,7 +6,7 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:57:01 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/23 11:13:24 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/27 12:11:46 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ char	*ft_strrchr(const char *s, int c)
 		i--;
 	}
 	if (s[0] == (char)c)
-		return((char *)s);
-	else	
+		return ((char *)s);
+	else
 		return (NULL);
 }
 

@@ -6,7 +6,7 @@
 /*   By: jfleming <jfleming@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:57:04 by jfleming          #+#    #+#             */
-/*   Updated: 2024/05/23 13:34:09 by jfleming         ###   ########.fr       */
+/*   Updated: 2024/05/27 12:19:51 by jfleming         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,26 +97,26 @@ char	**ft_split(char const *s, char c)
 	return (result);
 }
 
-// int	main(void)
-// {
-// 	char	*s = " Bom dia mundo! ";
-// 	char	c = ' ';
-// 	char	**finalstring;
+ int	main(void)
+{
+ 	char	*s = " Bom dia mundo! ";
+ 	char	c = ' ';
+ 	char	**finalstring;
 
-// 	finalstring = ft_split(s, c);
-// 	if(finalstring != NULL)
-// 	{
-// 		int	i = 0;
-// 		while(finalstring[i] != NULL)
-// 		{
-// 			printf("%s\n", finalstring[i]);
-// 			free(finalstring[i]);
-// 			i++;
-// 		}
-// 		free(finalstring);
-// 	}
-// 	else
-// 		printf("Erro na alocacao de memoria.");
-// 	return(0);
-// }
+ 	finalstring = ft_split(s, c);
+ 	if(finalstring != NULL)
+ 	{
+ 		int	i = 0;
+ 		while(finalstring[i] != NULL)
+ 		{
+ 			printf("%s\n", finalstring[i]);
+ 			free(finalstring[i]);
+ 			i++;
+ 		}
+ 		free(finalstring);
+ 	}
+ 	else
+ 		printf("Erro na alocacao de memoria.");
+ 	return(0);
+}
 
